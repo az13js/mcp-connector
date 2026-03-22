@@ -1,0 +1,54 @@
+{
+  "id": "mcp-connector",
+  "name": "MCP Connector",
+  "description": "Connect to external MCP (Model Context Protocol) servers",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "servers": {
+        "type": "array",
+        "description": "List of MCP servers to connect",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Server name (used in tool names)"
+            },
+            "type": {
+              "type": "string",
+              "enum": ["stdio", "streamable-http"],
+              "description": "Connection type"
+            },
+            "command": {
+              "type": "string",
+              "description": "Command to run (for stdio type)"
+            },
+            "args": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Command arguments (for stdio type)"
+            },
+            "url": {
+              "type": "string",
+              "description": "URL (for streamable-http type)"
+            },
+            "headers": {
+              "type": "object",
+              "additionalProperties": { "type": "string" },
+              "description": "HTTP headers (for streamable-http type)"
+            },
+            "env": {
+              "type": "object",
+              "additionalProperties": { "type": "string" },
+              "description": "Environment variables (for stdio type)"
+            }
+          },
+          "required": ["name", "type"]
+        }
+      }
+    }
+  }
+}

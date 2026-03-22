@@ -1,0 +1,11 @@
+{
+  "name": "mcp-connector",
+  "version": "1.0.0",
+  "description": "Connect to external MCP (Model Context Protocol) servers",
+  "main": "index.ts",
+  "type": "module",
+  "openclaw.extensions": ["./index.ts"],
+  "keywords": ["openclaw", "plugin", "mcp"],
+  "author": "",
+  "license": "ISC"
+}

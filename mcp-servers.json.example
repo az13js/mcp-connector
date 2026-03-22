@@ -1,0 +1,24 @@
+{
+  "servers": [
+    {
+      "name": "devops",
+      "type": "streamable-http",
+      "url": "http://localhost:3000/mcp",
+      "headers": {
+        "Authorization": "Bearer your-token-here"
+      }
+    },
+    {
+      "name": "filesystem",
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/directory"],
+      "env": {}
+    },
+    {
+      "name": "brave-search",
+      "type": "streamable-http",
+      "url": "http://localhost:3100/mcp"
+    }
+  ]
+}
