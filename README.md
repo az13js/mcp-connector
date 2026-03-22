@@ -69,6 +69,8 @@ mcp_devops_call(tool="deploy", args={environment: "production"})
 
 ## 重启 OpenClaw
 
+记得修改 OpenClaw 的配置文件（ openclaw.json ），把插件添加到 `plugins.allow` 中。
+
 配置完成后，需要重启 Gateway 使插件生效：
 
 ```bash
